@@ -19,3 +19,13 @@ resource "aws_subnet" "public-sub2" {
     Name = var.environment_name
   }
 }
+  
+  resource "aws_subnet" "public-sub3" {
+  vpc_id            = aws_vpc.Project-VPC.id 
+  cidr_block        = var.cidr-for-public-sub3
+  availability_zone = var.AZ-1 
+
+  tags = {
+    Name = var.environment_name
+  }
+}
